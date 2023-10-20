@@ -50,8 +50,34 @@ namespace ConsoleApp1
             set;
         }
     }
-    class sportCar : Car
+    class sportCar : Car, ICar
+    {
+        public int getMaxSpeed()
+        {
+            return 280;
+        }
+    
+        public void startAccelerating()
+        {
+            Console.WriteLine("Sport Car is accelerating");
+        }
+    }
+
+    internal abstract class Vehicle
+
     {
 
+        public abstract int getProductionYear();
+        public string GetOriginCountry()
+        {
+            return "Germany";
+        }
+
+
+    }
+
+    internal interface ICar
+    {
+        public void startAccelerating();
     }
 }
